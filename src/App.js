@@ -7,15 +7,16 @@ function App() {
   const [balance, setBalance] = useState(500);
   const [incrementValue, setIncrementValue] = useState(0);
 
-  const handleBuyCard = useCallback((price, value) => {
-    if (balance - price >= 0) {
-      setBalance(prev => prev - price)
-      setIncrementValue(prev => prev + value)
-      return true;
+  const handleBuyCard = (price, value) => {
+    if (balance - price < 0) {
+      alert("Insufficient funds");
+      return false;
     }
-    alert("Insufficient funds")
-    return false;
-  }, [])
+    setBalance(prev => prev - price)
+    setIncrementValue(prev => prev + value)
+
+    return true;
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
