@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
+  background-color: burlywood;
+  border-radius: 10px;
+  width: 170px;
+  height: 210px;
+}
+
+.buy-button {
+  bottom: 0;
+  cursor: pointer;
+}
